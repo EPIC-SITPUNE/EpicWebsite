@@ -1,0 +1,96 @@
+import React, {Fragment} from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+
+import GridContainer from "components/Grid/GridContainer.js";
+import GridItem from "components/Grid/GridItem.js";
+import { title } from "assets/jss/material-kit-react.js";
+
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: "center",
+      alignItems: "center",
+    '& > *': {
+      display: "flex",
+      marginLeft: theme.spacing(),
+      marginRight: theme.spacing(),
+      width: theme.spacing(20),
+      height: theme.spacing(20),
+    },
+  },
+  title: {
+    ...title,
+    marginBottom: "1rem",
+    marginTop: "30px",
+    minHeight: "32px",
+    textDecoration: "none"
+  },
+  description: {
+    color: "#999"
+  },
+  section: {
+    padding: "70px 0",
+    textAlign: "center"
+  },
+  button: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: theme.spacing(5)
+  },
+countdownItem: {
+    color: "#111",
+    fontSize: "70px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+    lineHeight: "30px",
+    margin: "auto",
+    position: "relative",
+    flexWrap: 'wrap',
+}
+}));
+
+export default function Timer() {
+  const classes = useStyles();
+
+  return (
+      <Fragment>
+    <div className={classes.section}>
+      <GridContainer justify="center">
+        <GridItem xs={12} sm={6} md={8}>
+          <h2 className={classes.title}>Upcoming Event</h2>
+          <h5 className={classes.description}>
+          You do not have to wait for the right time, but start right now as EPIC brings to you a masterclass "Unleashing LinkedIn" which will help students and newbies in decoding ways to have a stunning profile in LinkedIn and also to network their way into the professional world.
+          </h5>
+        </GridItem>
+      </GridContainer>
+      </div>
+    <div className={classes.root}> 
+      <Paper elevation={3}>
+      <div className={classes.countdownItem}>00</div>
+      </Paper>
+      <Paper elevation={3}>
+      <div className={classes.countdownItem}>00</div>
+      </Paper>
+      <Paper elevation={3}>
+      <div className={classes.countdownItem}>00</div>
+      </Paper>
+      <Paper elevation={3}>
+      <div className={classes.countdownItem}>00</div>
+      </Paper>
+    </div>
+    <div className={classes.button}>
+    <Button variant="contained" color="primary" disableElevation>
+      Register
+    </Button>
+    </div>
+    </Fragment>
+  );
+}
