@@ -23,11 +23,7 @@ export default function ProductSection() {
         <GridItem xs={12} sm={6} md={8}>
           <h2 className={classes.title}>Flagship Events</h2>
           <h5 className={classes.description}>
-            This is the paragraph where you can write more details about your
-            product. Keep you user engaged by providing meaningful information.
-            Remember that by this time, the user is curious, otherwise he wouldn
-            {"'"}t scroll to get here. Add a button if you want the user to see
-            more.
+          Runner’s up at the National Entrepreneurship Challenge – IITB, Organiser of the official E-Summit of SIT, Organiser of TechStars Start-up Weekend Powered by Google for start-ups
           </h5>
         </GridItem>
       </GridContainer>
