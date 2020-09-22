@@ -27,4 +27,3 @@ yarn-error.log*
 # compiled css
 /bootstrap.min.css
 /demo-documentation.css
-/material-dashboard.css
