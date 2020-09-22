@@ -58,7 +58,7 @@ export default function LandingPage(props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-          <Timer />
+        <Timer timeTillDate="05 26 2020, 6:00 am" timeFormat="MM DD YYYY, h:mm a"  />
           <ProductSection />
           <TeamSection />
           <WorkSection />

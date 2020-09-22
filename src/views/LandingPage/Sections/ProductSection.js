@@ -7,6 +7,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import SC from "assets/img/StartupCon.png";
 import SW from "assets/img/SW.png";
 
+import './Timer.css'
+
+import Button from '@material-ui/core/Button';
+
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -39,7 +43,11 @@ export default function ProductSection() {
             {"'"}t scroll to get here. Add a button if you want the user to see
             more.
           </p>
-            
+          <div className="button">
+            <Button variant="contained" color="primary" disableElevation>
+              Info
+    </Button>
+          </div>
           </GridItem>
           <GridItem xs={12} sm={6} md={4}>
           <img src={SW} alt="Logo" />
@@ -50,7 +58,11 @@ export default function ProductSection() {
             {"'"}t scroll to get here. Add a button if you want the user to see
             more.
           </p>
-            
+          <div className="button">
+            <Button variant="contained" color="primary" disableElevation>
+              Info
+    </Button>
+          </div>
           </GridItem>
         </GridContainer>
       </div>
