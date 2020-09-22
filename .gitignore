@@ -24,4 +24,7 @@ yarn-error.log*
 
 # package
 /dist
-
+# compiled css
+/bootstrap.min.css
+/demo-documentation.css
+/material-dashboard.css
