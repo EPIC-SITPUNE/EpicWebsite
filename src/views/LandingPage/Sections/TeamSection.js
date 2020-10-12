@@ -1,6 +1,5 @@
 import React from "react";
 // nodejs library that concatenates classes
-import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -16,31 +15,41 @@ import CardFooter from "components/Card/CardFooter.js";
 
 import styles from "assets/jss/material-kit-react/views/landingPageSections/teamStyle.js";
 
-import sanket from "assets/img/faces/Sanket.jpeg";
-import krishna from "assets/img/faces/Krishna.jpeg";
-import vidisha from "assets/img/faces/Vidisha.jpeg";
-import meghana from "assets/img/faces/Meghana.jpeg";
-import kartik from "assets/img/faces/Kartik.jpeg";
-
 const useStyles = makeStyles(styles);
 
 export default function TeamSection() {
   const classes = useStyles();
-  const imageClasses = classNames(
-    classes.imgRaised,
-    classes.imgRoundedCircle,
-    classes.imgFluid
-  );
   return (
     <div className={classes.section}>
       <h2 className={classes.title}>Here is our team</h2>
       <div>
         <GridContainer>
+        <GridItem xs={12} sm={12} md={4}>
+            <Card plain>
+              <h4 className={classes.cardTitle}>
+                Ismail Akbani
+                <br />
+                <small className={classes.smallTitle}>Faculty Head</small>
+              </h4>
+              <CardBody>
+                <p className={classes.description}>
+                The Founder! An unorthodox technology educator turned startup evangelist. Keeps the teams always up and motivated.
+                </p>
+              </CardBody>
+              <CardFooter className={classes.justifyCenter}>
+                <Button
+                  justIcon
+                  color="transparent"
+                  className={classes.margin5}
+                  href="https://www.linkedin.com/in/maverickismail/"
+                >
+                  <i className={classes.socials + " fab fa-linkedin"} />
+                </Button>
+              </CardFooter>
+            </Card>
+          </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
-              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={vidisha} alt="..." className={imageClasses} />
-              </GridItem>
               <h4 className={classes.cardTitle}>
                 Vidisha Wagle
                 <br />
@@ -56,24 +65,15 @@ export default function TeamSection() {
                   justIcon
                   color="transparent"
                   className={classes.margin5}
+                  href="https://www.linkedin.com/in/vidisha-wagle-22894714a/"
                 >
                   <i className={classes.socials + " fab fa-linkedin"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-instagram"} />
                 </Button>
               </CardFooter>
             </Card>
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
-              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={sanket} alt="..." className={imageClasses} />
-              </GridItem>
               <h4 className={classes.cardTitle}>
                 Sanket Shevkar
                 <br />
@@ -81,7 +81,7 @@ export default function TeamSection() {
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                The techie! He puts it on the stage, whether it is with design, new pages and cool boi stuff 
+                The techie! He puts it on the stage, whether it is with his designs, new web pages and cool boi stuff.
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
@@ -89,34 +89,22 @@ export default function TeamSection() {
                   justIcon
                   color="transparent"
                   className={classes.margin5}
-                  href="https://www.linkedin.com/in/vidisha-wagle-22894714a"
+                  href="https://www.linkedin.com/in/sanket-shevkar-a71133168/"
                 >
                   <i className={classes.socials + " fab fa-linkedin"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                  href="https://www.instagram.com/vidsssssw/"
-                >
-                  <i className={classes.socials + " fab fa-instagram"} />
                 </Button>
               </CardFooter>
             </Card>
           </GridItem><GridItem xs={12} sm={12} md={4}>
             <Card plain>
-              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={kartik} alt="..." className={imageClasses} />
-              </GridItem>
               <h4 className={classes.cardTitle}>
                 Kartik Kumar
                 <br />
                 <small className={classes.smallTitle}>SR Head</small>
               </h4>
               <CardBody>
-                <p className={classes.description}>
-                The smartesttt of all! 
-                Sit hadn't seen a James bond until Kartik took admission! He's over very own 007, achieves the impossible kafi effortlessly                </p>
+                <p className={classes.description}>The smartesttt of all! 
+Sit hadn't seen a James bond until Kartik took admission! He's over very own 007, achieves the impossible kafi effortlessly</p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
               <Button
@@ -127,22 +115,11 @@ export default function TeamSection() {
                 >
                   <i className={classes.socials + " fab fa-linkedin"} />
                 </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                  href="https://www.instagram.com/kartikk_26/"
-                >
-                  <i className={classes.socials + " fab fa-instagram"} />
-                </Button>
               </CardFooter>
             </Card>
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
-              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={krishna} alt="..." className={imageClasses} />
-              </GridItem>
               <h4 className={classes.cardTitle}>
                 G. Krishna
                 <br />
@@ -162,21 +139,11 @@ export default function TeamSection() {
                 >
                   <i className={classes.socials + " fab fa-linkedin"} />
                 </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-instagram"} />
-                </Button>
               </CardFooter>
             </Card>
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <Card plain>
-              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
-                <img src={meghana} alt="..." className={imageClasses} />
-              </GridItem>
               <h4 className={classes.cardTitle}>
                 Meghana M
                 <br />
@@ -196,13 +163,6 @@ export default function TeamSection() {
                   href="https://www.linkedin.com/in/meghana-maringanty-461a80169"
                 >
                   <i className={classes.socials + " fab fa-linkedin"} />
-                </Button>
-                <Button
-                  justIcon
-                  color="transparent"
-                  className={classes.margin5}
-                >
-                  <i className={classes.socials + " fab fa-instagram"} />
                 </Button>
               </CardFooter>
             </Card>
