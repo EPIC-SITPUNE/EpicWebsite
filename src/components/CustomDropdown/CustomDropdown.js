@@ -44,7 +44,7 @@ export default function CustomDropdown(props) {
     setAnchorEl(null);
   };
   const classes = useStyles();
-  const {
+  let {
     buttonText,
     buttonIcon,
     dropdownList,
@@ -92,6 +92,7 @@ export default function CustomDropdown(props) {
         >
           {icon}
           {buttonText !== undefined ? buttonText : null}
+          {console.log(typeof(buttonText))}
           {caret ? <b className={caretClasses} /> : null}
         </Button>
       </div>
@@ -148,10 +149,11 @@ export default function CustomDropdown(props) {
                     return (
                       <MenuItem
                         key={key}
-                        onClick={() => handleClose(prop)}
+                        onClick={() => buttonText=prop}
                         className={dropdownItem}
                       >
                         {prop}
+                     {console.log(prop)}
                       </MenuItem>
                     );
                   })}
@@ -180,7 +182,7 @@ CustomDropdown.propTypes = {
     "danger",
     "rose"
   ]),
-  buttonText: PropTypes.node,
+  buttonText: PropTypes.string,
   buttonIcon: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   dropdownList: PropTypes.array,
   buttonProps: PropTypes.object,

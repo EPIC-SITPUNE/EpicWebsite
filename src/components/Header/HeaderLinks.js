@@ -27,7 +27,20 @@ export default function HeaderLinks(props) {
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        
+        <Tooltip
+          id="discord"
+          title="Join Discord Server"
+          placement={window.innerWidth > 959 ? "top" : "left"}
+          classes={{ tooltip: classes.tooltip }}
+        >
+          <Link to='/discord'>
+              <Button color="primary" round>
+                <i className={classes.socialIcons + " fab fa-discord"} />  Discord
+          </Button>
+          </Link>
+        </Tooltip>
+      </ListItem>
+      <ListItem className={classes.listItem}>
         <Tooltip
           id="instagram-twitter"
           title="Follow us on linkedin"
@@ -46,15 +59,15 @@ export default function HeaderLinks(props) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Tooltip
-          id="instagram-facebook"
-          title="Follow us on facebook"
+          id="instagram-twitter"
+          title="Facebook Page"
           placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
           <Button
-            color="transparent"
-            href="https://www.facebook.com/CreativeTim?ref=creativetim"
+            href="https://www.linkedin.com/in/epic-sit/"
             target="_blank"
+            color="transparent"
             className={classes.navLink}
           >
             <i className={classes.socialIcons + " fab fa-facebook"} />
