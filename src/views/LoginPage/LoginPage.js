@@ -84,7 +84,7 @@ export default function LoginPage(props) {
   }
 
 useEffect(() => {
-  axios.get('http://localhost:5000/api/users/seats') 
+  axios.get('https://frozen-beach-47944.herokuapp.com/api/users/seats') 
           .then(res => { 
               setSeats(res.data.seat);
             })
