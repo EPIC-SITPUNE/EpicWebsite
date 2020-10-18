@@ -1,4 +1,6 @@
-import React from "react";
+import React, {useEffect} from "react";
+//import Spinner from './loading'
+import axios from 'axios'
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from '@material-ui/core/TextField';
@@ -20,6 +22,13 @@ import CardBody from "components/Card/CardBody.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardFooter from "components/Card/CardFooter.js";
 import CustomTabs from "components/CustomTabs/CustomTabs.js";
+import Slide from "@material-ui/core/Slide";
+//import IconButton from "@material-ui/core/IconButton";
+import Dialog from "@material-ui/core/Dialog";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogActions from "@material-ui/core/DialogActions";
+
 
 import styles from "assets/jss/material-kit-react/views/loginPage.js";
 import typo from "assets/jss/material-kit-react/views/componentsSections/typographyStyle.js";
@@ -29,17 +38,64 @@ import image from "assets/img/bg7.jpg";
 const useStyles = makeStyles(styles);
 const useTypo = makeStyles(typo);
 
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="down" ref={ref} {...props} />;
+});
+
+Transition.displayName = "Transition";
+
+
+let message=null;
+
+function loading(mess){
+  if(mess===null){
+    return <p>ok</p>
+  }
+  else{
+    return 1
+
+  }
+}
+
+
+
+
 export default function LoginPage(props) {
   const [cardAnimaton, setCardAnimation] = React.useState("cardHidden");
   const [name, setName] = React.useState(null);
   const [email, setEmail] = React.useState(null);
+  const [classicModal, setClassicModal] = React.useState(false);
+  const [seats, setSeats] = React.useState(50);
   setTimeout(function() {
     setCardAnimation("");
   }, 700);
+  
+  function register(userName, userEmail){
+    const userData={
+      name: userName,
+      email: userEmail
+    }
+    axios.post('https://frozen-beach-47944.herokuapp.com/api/users/register',userData) 
+          .then(res => {alert(res.data.email); 
+            if(res.data.email.localeCompare("Registration Successful")===0){
+              setSeats(res.data.seat);
+              window.location.reload(false);
+          }})
+  }
+
+useEffect(() => {
+  axios.get('http://localhost:5000/api/users/seats') 
+          .then(res => { 
+              setSeats(res.data.seat);
+            })
+  
+});
+
   const classes = useStyles();
   const classTypo=useTypo();
   const { ...rest } = props;
   return (
+    
     <div>
       <Header
         absolute
@@ -67,7 +123,7 @@ export default function LoginPage(props) {
                     tabIcon: Chat,
                     tabContent: (
                       <div>
-                      <h1><b>50</b> <small>Remaining</small></h1>
+                  <h1><b>{seats}</b> <small>Remaining</small></h1>
                       </div>
                     )
                   },
@@ -143,10 +199,49 @@ export default function LoginPage(props) {
         />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                  <Button color="primary" round
-                  onClick={()=>console.log(email, name)}>
-                Go
-              </Button>
+              <Button
+                  color="primary"
+                  round
+                 onClick={async() => {await register(name, email); //await setClassicModal(true); 
+                }}
+                >
+                  Go
+                </Button>
+                <Dialog
+                  classes={{
+                    root: classes.center,
+                    paper: classes.modal
+                  }}
+                  open={classicModal}
+                  TransitionComponent={Transition}
+                  keepMounted
+                  onClose={() => setClassicModal(false)}
+                  aria-labelledby="classic-modal-slide-title"
+                  aria-describedby="classic-modal-slide-description"
+                >
+                  <DialogTitle
+                    id="classic-modal-slide-title"
+                    disableTypography
+                    className={classes.modalHeader}
+                  >
+                    <h4 className={classes.modalTitle}>Status</h4>
+                  </DialogTitle>
+                  <DialogContent
+                    id="classic-modal-slide-description"
+                    className={classes.modalBody}
+                  >
+                    {loading(message)}
+                  </DialogContent>
+                  <DialogActions className={classes.modalFooter}>
+                    <Button
+                      onClick={() => setClassicModal(false)}
+                      color="danger"
+                      simple
+                    >
+                      Close
+                    </Button>
+                  </DialogActions>
+                </Dialog>
                   </CardFooter>
                 </form>
               </Card>
