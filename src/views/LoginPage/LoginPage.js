@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, Fragment} from "react";
 //import Spinner from './loading'
 import axios from 'axios'
 // @material-ui/core components
@@ -65,7 +65,7 @@ export default function LoginPage(props) {
   const [name, setName] = React.useState(null);
   const [email, setEmail] = React.useState(null);
   const [classicModal, setClassicModal] = React.useState(false);
-  const [seats, setSeats] = React.useState(50);
+  const [seats, setSeats] = React.useState(null);
   setTimeout(function() {
     setCardAnimation("");
   }, 700);
@@ -82,6 +82,7 @@ export default function LoginPage(props) {
               window.location.reload(false);
           }})
   }
+
 
 useEffect(() => {
   axios.get('https://frozen-beach-47944.herokuapp.com/api/users/seats') 
@@ -131,33 +132,29 @@ useEffect(() => {
                     tabName: "Steps",
                     tabIcon: Step,
                     tabContent: (
+                      <Fragment>
                       <p className={classes.textCenter}>
-                        I think that’s a responsibility that I have, to push
-                        possibilities, to show people, this is the level that
-                        things could be at. I will be the leader of a company
-                        that ends up being worth billions of dollars, because I
-                        got the answers. I understand culture. I am the nucleus.
-                        I think that’s a responsibility that I have, to push
-                        possibilities, to show people, this is the level that
-                        things could be at.
-                      </p>
+                        Step 1 : Register on the website.</p>
+<p>Step 2 : You will get the Discord server link by mail. Join the server.</p>
+<p>Step 3 : Read all the rules carefully.</p>
+<p>Step 4 : Explore the server!</p> 
+</Fragment>
                     )
                   },
                   {
                     tabName: "Benefits",
                     tabIcon: Info,
                     tabContent: (
+                      <Fragment>
                       <p className={classes.textCenter}>
-                        think that’s a responsibility that I have, to push
-                        possibilities, to show people, this is the level that
-                        things could be at. So when you get something that has
-                        the name Kanye West on it, it’s supposed to be pushing
-                        the furthest possibilities. I will be the leader of a
-                        company that ends up being worth billions of dollars,
-                        because I got the answers. I understand culture. I am
-                        the nucleus.
+                        Your network. Build your network throughout the country with our network of mentors, industry experts and startups.
                       </p>
-                    )
+                      <p>Platform for discussion of innovative ideas with like minded people and a chance to get mentorship for the same  </p>
+                      <p>A platform to build and get mentorship for the following skills:<ul>
+                        <li>Coding
+</li>
+<li>Marketing</li><li>Stock Market</li><li>Finance</li><li>Sales</li></ul></p>
+</Fragment>)
                   }
                 ]}
               />
