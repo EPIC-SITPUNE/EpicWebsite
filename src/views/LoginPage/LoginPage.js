@@ -128,6 +128,7 @@ useEffect(() => {
                     tabContent: (
                       <div>
                   <h1><b>{seats}</b> <small>Remaining</small></h1>
+                  <h3><b>Apply to Waiting List</b></h3>
                       </div>
                     )
                   },
