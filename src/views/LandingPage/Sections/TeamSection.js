@@ -127,7 +127,8 @@ Sit hadn't seen a James bond until Kartik took admission! He's over very own 007
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                They are the dynamic duo!! When they start talking in South Indian they leave planet earth. With adjectives they'd be Kool Krishna and Meticulous Meghana
+                Joyous, wise, nurturing... the list can go on and on. that's our Finace and publicity head!
+These both areas go hand in hand and no better team member than her to handle these whilst keeping her calm! 
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
@@ -151,8 +152,7 @@ Sit hadn't seen a James bond until Kartik took admission! He's over very own 007
               </h4>
               <CardBody>
                 <p className={classes.description}>
-                They are the dynamic duo!! When they start talking in South Indian they leave planet earth. 
-                With adjectives they'd be Kool Krishna and Meticulous Meghana 
+                She is a mixture of 3 very contrasting characteristics. Super Enthusiastic, reliable and compassionate. Even in her enthusiastic mood she can solve and relate to problems of everyone.
                 </p>
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
