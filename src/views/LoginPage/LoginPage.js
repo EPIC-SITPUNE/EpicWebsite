@@ -78,7 +78,6 @@ export default function LoginPage(props) {
     axios.post('https://frozen-beach-47944.herokuapp.com/api/users/register',userData) 
           .then(res => {alert(res.data.email); 
             if(res.data.email.localeCompare("Registration Successful")===0){
-              setSeats(res.data.seat);
               window.location.reload(false);
           }})
   }
@@ -86,8 +85,12 @@ export default function LoginPage(props) {
 
 useEffect(() => {
   axios.get('https://frozen-beach-47944.herokuapp.com/api/users/seats') 
-          .then(res => { 
+          .then(res => {
+            if(res.data.seat>=50){
+              setSeats(0)
+            }else{
               setSeats(res.data.seat);
+            }
             })
   
 });
