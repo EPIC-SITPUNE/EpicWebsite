@@ -89,7 +89,7 @@ useEffect(() => {
             if(res.data.seat>=50){
               setSeats(0)
             }else{
-              setSeats(res.data.seat);
+              setSeats(0);
             }
             })
   
